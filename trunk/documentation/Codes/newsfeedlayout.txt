@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <SlidingDrawer
+        android:id="@+id/slidingDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/handle"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="@drawable/edittext"
+            android:src="@drawable/nf_post" />
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#70000000"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/reg_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:ems="10"
+                android:hint="What&apos;s on your mind?"
+                android:padding="15dip" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/reg_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/mybutton"
+                android:padding="10dip"
+                android:text="Post"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </SlidingDrawer>
+
+    <TabHost 
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="50dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.00" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+            <ScrollView
+                android:layout_width="50dp"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="100dp"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/nf_home"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:onClick="tabHandler"
+                        android:src="@drawable/nf_home" />
+
+                    <ImageButton
+                        android:id="@+id/nf_notice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="#00000000"
+                        android:onClick="tabHandler"
+                        android:src="@drawable/nf_notif" />
+
+                    <ImageButton
+                        android:id="@+id/nf_brgynotice"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="#00000000"
+                        android:onClick="tabHandler"
+                        android:src="@drawable/nf_brgynotif" />
+                    
+                    <ImageButton
+                        android:id="@+id/nf_email"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="#00000000"
+                        android:onClick="tabHandler"
+                        android:src="@drawable/nf_email" />
+                    
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.7" />
+    </LinearLayout>
+
+</TabHost>
+</RelativeLayout>
